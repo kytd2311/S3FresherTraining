@@ -2,7 +2,7 @@
 
 namespace S3Train.Domain
 {
-    public class Category : BaseIdentity
+    public class Category : EntityBase
     {
         public string Name { get; set; }
         public string Summary { get; set; }

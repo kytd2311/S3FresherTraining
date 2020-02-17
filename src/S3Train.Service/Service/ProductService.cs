@@ -6,22 +6,10 @@ using S3Train.Domain;
 
 namespace S3Train.Service
 {
-    public class ProductService : IProductService
+    public class ProductService : GenenicServiceBase<Product>, IProductService
     {
-        private readonly ApplicationDbContext _dbContext;
-        public ProductService(ApplicationDbContext dbContext)
+        public ProductService(ApplicationDbContext dbContext) : base(dbContext)
         {
-            _dbContext = dbContext;
-        }
-
-        public IList<Product> GetAll()
-        {
-            return _dbContext.Products.Where(x => x.IsActive).OrderBy(x => x.Price).ToList();
-        }
-
-        public Product GetById(Guid id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

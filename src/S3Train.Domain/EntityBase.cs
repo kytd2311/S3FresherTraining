@@ -2,7 +2,10 @@
 
 namespace S3Train.Domain
 {
-    public class BaseIdentity
+    /// <summary>
+    /// Base class for database domain entity
+    /// </summary>
+    public abstract class EntityBase
     {
         public Guid Id { get; set; }
         public DateTime CreatedDate { get; set; }

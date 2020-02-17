@@ -1,6 +1,6 @@
 ﻿namespace S3Train.Domain
 {
-    public class ProductAdvertisement : BaseIdentity
+    public class ProductAdvertisement : EntityBase
     {
         public string Title { get; set; }
         public string Description { get; set; }

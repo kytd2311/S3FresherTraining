@@ -2,7 +2,7 @@
 
 namespace S3Train.Domain
 {
-    public class Product : BaseIdentity
+    public class Product : EntityBase
     {
         public Guid CategoryId { get; set; }
         public string Name { get; set; }

@@ -5,17 +5,15 @@ using S3Train.Domain;
 
 namespace S3Train.Service
 {
-    public class ProductAdvertisementService : IProductAdvertisementService
+    public class ProductAdvertisementService : GenenicServiceBase<ProductAdvertisement>, IProductAdvertisementService
     {
-        private readonly ApplicationDbContext _dbContext;
-        public ProductAdvertisementService(ApplicationDbContext dbContext)
+        public ProductAdvertisementService(ApplicationDbContext dbContext) : base(dbContext)
         {
-            _dbContext = dbContext;
         }
 
         public IList<ProductAdvertisement> GetSliderItems()
         {
-            return _dbContext.ProductAdvertisements.Where(x => x.AdType == ProductAdvertisementType.SliderBanner && x.IsActive).ToList();
+            return this.EntityDbSet.Where(x => x.AdType == ProductAdvertisementType.SliderBanner && x.IsActive).ToList();
         }
     }
 }
